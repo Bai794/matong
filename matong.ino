@@ -40,13 +40,23 @@ void set_moterSpeed(int s, int dir)
   }
   if (s == 1)
   {
-    set_moterSpeed(4, 0); 
+    set_moterSpeed(4, 0);
     digitalWrite(7, HIGH);
     digitalWrite(6, LOW);
     delay(500);
     wait_time = 1000;
     analogWrite(8, 250);
     delay(1000);
+    analogWrite(8, 0);
+  }
+  if(s==5){
+    set_moterSpeed(4, 0);
+    digitalWrite(7, HIGH);
+    digitalWrite(6, LOW);
+    delay(500);
+    wait_time = 600;
+    analogWrite(8, 250);
+    delay(600);
     analogWrite(8, 0);
   }
   if (s == 2)
@@ -121,7 +131,7 @@ void loop()
   }
   else if (key_num == 4)
   {
-    set_moterSpeed(4, 0); 
+    set_moterSpeed(5, 0);
     // if (temp > 0)
     //   set_moterSpeed(temp, 0); // 1代表正转
     // Serial.println(temp);
